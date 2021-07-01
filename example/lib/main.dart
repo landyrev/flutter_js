@@ -1,12 +1,20 @@
 import 'dart:io';
 
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_js/flutter_js.dart';
 import 'package:flutter_js_example/ajv_example.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MyApp());
+  runApp(
+    DevicePreview(
+      //defaultDevice: DevicePreview.defaultDevices.,
+      enabled: !kReleaseMode,
+      builder: (ctx) => MyApp()
+    )
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -19,6 +27,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: DevicePreview.locale(context), // Add the locale here
+      builder: DevicePreview.appBuilder, // Add the builder here
       home: FlutterJsHomeScreen(),
     );
   }

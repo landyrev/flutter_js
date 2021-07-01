@@ -1,13 +1,10 @@
-# 0.4.0+6
+# 0.5.0+0
 
-- Fix executePendingJobs (wasn't dispatching in the most current version)
-# 0.4.0+5
-
-- Removed console.log from fetch.js
+- Fixes issue relative to build on Dart 2.13 (issues #41 and #42)
 
 # 0.4.0+4
 
-- Fixed issue on xhr requests - wasn't passing headers to the requests
+- Small README.md fix
 
 # 0.4.0+3
 
