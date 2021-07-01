@@ -64,7 +64,7 @@ open class JSContextFoundation : JSContext {
     }
 
     fileprivate func insert() {
-        let jsInsertArray: [JSInsert] = [Global(), Console()]
+        let jsInsertArray: [JSInsert] = [Global(), Console(), TimerJS()];
         for jsInsert in jsInsertArray {
             jsInsert.insert(self)
         }
